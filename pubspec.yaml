@@ -1,7 +1,7 @@
 name: meditation_app
-description: "A new Flutter project."
+description: "MVVM based meditation app"
 publish_to: 'none'
-version: 0.1.0
+version: 1.0.1+1
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
@@ -17,3 +17,14 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/svg/
+    - assets/fonts/
+
+  fonts:
+    - family: SFDisplay
+      fonts:
+        - asset: assets/fonts/sf_pro_display.otf
+          weight: 600
