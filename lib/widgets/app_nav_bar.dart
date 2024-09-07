@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:meditation_app/styles/app_icons.dart';
 
 import '../styles/app_colors.dart';
 
-class AppNavBar extends StatelessWidget {
+class AppNavBar extends StatefulWidget {
   const AppNavBar({
     super.key,
   });
 
+  @override
+  State<AppNavBar> createState() => _AppNavBarState();
+}
+
+class _AppNavBarState extends State<AppNavBar> {
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -30,36 +38,94 @@ class AppNavBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            IconButton(
-              icon: const Icon(
-                Icons.home,
-                color: AppColors.white,
-              ),
-              onPressed: () {},
+            AppNavBarItem(
+              activeIconSrc: AppIcons.home,
+              inactiveIconSrc: AppIcons.homeInactive,
+              onPressed: () {
+                setState(() {
+                  _selectedIndex = 0;
+                });
+              },
+              isActive: _selectedIndex == 0,
             ),
-            IconButton(
-              icon: const Icon(
-                Icons.search,
-                color: AppColors.white,
-              ),
-              onPressed: () {},
+            AppNavBarItem(
+              activeIconSrc: AppIcons.search,
+              inactiveIconSrc: AppIcons.searchInactive,
+              onPressed: () {
+                setState(() {
+                  _selectedIndex = 1;
+                });
+              },
+              isActive: _selectedIndex == 1,
             ),
-            IconButton(
-              icon: const Icon(
-                Icons.favorite,
-                color: AppColors.white,
-              ),
-              onPressed: () {},
+            AppNavBarItem(
+              activeIconSrc: AppIcons.profile,
+              inactiveIconSrc: AppIcons.profileInactive,
+              onPressed: () {
+                setState(() {
+                  _selectedIndex = 2;
+                });
+              },
+              isActive: _selectedIndex == 2,
             ),
-            IconButton(
-              icon: const Icon(
-                Icons.person,
-                color: AppColors.white,
-              ),
-              onPressed: () {},
+            AppNavBarItem(
+              activeIconSrc: AppIcons.star,
+              inactiveIconSrc: AppIcons.starInactive,
+              onPressed: () {
+                setState(() {
+                  _selectedIndex = 3;
+                });
+              },
+              isActive: _selectedIndex == 3,
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class AppNavBarItem extends StatelessWidget {
+  const AppNavBarItem({
+    super.key,
+    required this.activeIconSrc,
+    required this.inactiveIconSrc,
+    required this.onPressed,
+    this.isActive = false,
+  });
+
+  final String activeIconSrc;
+  final String inactiveIconSrc;
+  final void Function() onPressed;
+  final bool isActive;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: isActive
+            ? [
+                BoxShadow(
+                  color: AppColors.lightPink.withOpacity(0.6),
+                  blurRadius: 25,
+                  spreadRadius: 4,
+                  offset: const Offset(
+                    0,
+                    6,
+                  ),
+                )
+              ]
+            : [],
+      ),
+      child: IconButton(
+        icon: SvgPicture.asset(
+          isActive ? activeIconSrc : inactiveIconSrc,
+          colorFilter: ColorFilter.mode(
+            isActive ? AppColors.white : AppColors.grey,
+            BlendMode.srcIn,
+          ),
+        ),
+        onPressed: onPressed,
       ),
     );
   }
