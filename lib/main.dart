@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-
-import 'features/home/home_screen.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:meditation_app/services/app_router.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,8 +10,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeScreen(),
+    return CupertinoApp.router(
+      routerConfig: AppRouter.router,
     );
   }
 }

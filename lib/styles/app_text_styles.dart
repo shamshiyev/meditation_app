@@ -9,4 +9,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.white,
   );
+
+  static const TextStyle s52w400 = TextStyle(
+    fontSize: 52,
+    fontFamily: "SFDisplay",
+    fontWeight: FontWeight.w400,
+    color: AppColors.white,
+  );
 }

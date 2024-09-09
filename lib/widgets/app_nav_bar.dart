@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:meditation_app/styles/app_icons.dart';
 
 import '../styles/app_colors.dart';
@@ -7,7 +8,10 @@ import '../styles/app_colors.dart';
 class AppNavBar extends StatefulWidget {
   const AppNavBar({
     super.key,
+    required this.child,
   });
+
+  final StatefulNavigationShell child;
 
   @override
   State<AppNavBar> createState() => _AppNavBarState();
@@ -15,6 +19,7 @@ class AppNavBar extends StatefulWidget {
 
 class _AppNavBarState extends State<AppNavBar> {
   int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -45,6 +50,7 @@ class _AppNavBarState extends State<AppNavBar> {
                 setState(() {
                   _selectedIndex = 0;
                 });
+                widget.child.goBranch(_selectedIndex);
               },
               isActive: _selectedIndex == 0,
             ),
@@ -55,6 +61,7 @@ class _AppNavBarState extends State<AppNavBar> {
                 setState(() {
                   _selectedIndex = 1;
                 });
+                widget.child.goBranch(_selectedIndex);
               },
               isActive: _selectedIndex == 1,
             ),
@@ -65,6 +72,7 @@ class _AppNavBarState extends State<AppNavBar> {
                 setState(() {
                   _selectedIndex = 2;
                 });
+                widget.child.goBranch(_selectedIndex);
               },
               isActive: _selectedIndex == 2,
             ),
@@ -75,6 +83,7 @@ class _AppNavBarState extends State<AppNavBar> {
                 setState(() {
                   _selectedIndex = 3;
                 });
+                widget.child.goBranch(_selectedIndex);
               },
               isActive: _selectedIndex == 3,
             ),
@@ -96,8 +105,8 @@ class AppNavBarItem extends StatelessWidget {
 
   final String activeIconSrc;
   final String inactiveIconSrc;
-  final void Function() onPressed;
   final bool isActive;
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
