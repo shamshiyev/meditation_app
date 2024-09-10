@@ -42,8 +42,8 @@ class MainScreen extends StatelessWidget {
           ),
           BackdropFilter(
             filter: ImageFilter.blur(
-              sigmaX: 8.0,
-              sigmaY: 8.0,
+              sigmaX: 20.0,
+              sigmaY: 10.0,
             ),
             child: Container(
               decoration: BoxDecoration(

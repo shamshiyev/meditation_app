@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:meditation_app/features/home/home_screen.dart';
+import 'package:meditation_app/features/home/view/home_screen.dart';
 
 import '../features/discover/discover_screen.dart';
 import '../features/main/main_screen.dart';

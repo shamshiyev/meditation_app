@@ -47,6 +47,8 @@ class _AppNavBarState extends State<AppNavBar> {
               activeIconSrc: AppIcons.home,
               inactiveIconSrc: AppIcons.homeInactive,
               onPressed: () {
+                // TODO: Get rid of setState and use GoRouter to navigate
+                // Plus add some animations
                 setState(() {
                   _selectedIndex = 0;
                 });
@@ -115,7 +117,7 @@ class AppNavBarItem extends StatelessWidget {
         boxShadow: isActive
             ? [
                 BoxShadow(
-                  color: AppColors.lightPink.withOpacity(0.6),
+                  color: AppColors.lightPink.withOpacity(0.5),
                   blurRadius: 25,
                   spreadRadius: 4,
                   offset: const Offset(

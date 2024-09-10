@@ -9,6 +9,7 @@ class AppColors {
   static const Color lightGreen = Color(0xFF205284);
   static const Color black = Color(0xFF000000);
   static const Color purple = Color(0xFF7B42F6);
+  static const Color lightPurple = Color(0xFFA2A1E8);
   static const Color violet = Color(0xFFB01EFF);
   static const Color pink = Color(0xFFE1467C);
   static const Color lightPink = Color(0xFFFF1FCE);
@@ -16,6 +17,7 @@ class AppColors {
   static const Color purpleShadow = Color(0xFF452A7C);
   static const Color primary = Color(0xFF3913B8);
   static const Color backGround = Color(0xFF2B2B52);
+  static const Color gold = Color(0xFFF6BB5C);
 
   static LinearGradient backGroundGradient = LinearGradient(
     colors: [
@@ -25,6 +27,16 @@ class AppColors {
     stops: const [0.0, 1.0], // Positions of the colors
     begin: Alignment.topLeft,
 
+    end: Alignment.bottomRight,
+  );
+
+  static LinearGradient blackGradient = LinearGradient(
+    colors: [
+      const Color(0xFF3C3B3B).withOpacity(0.4), // Start color
+      const Color(0xFF000000).withOpacity(0.7), // End color
+    ],
+    stops: const [0.0, 1.0],
+    begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
