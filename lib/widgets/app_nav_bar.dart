@@ -29,13 +29,13 @@ class _AppNavBarState extends State<AppNavBar> {
       child: Container(
         height: kBottomNavigationBarHeight,
         decoration: BoxDecoration(
-          color: AppColors.white.withOpacity(0.2),
+          color: AppColors.white.withValues(alpha: 0.2),
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(30),
           ),
           border: Border(
             top: BorderSide(
-              color: AppColors.white.withOpacity(0.2),
+              color: AppColors.white.withValues(alpha: 0.2),
               width: 1.5,
             ),
           ),
@@ -117,7 +117,7 @@ class AppNavBarItem extends StatelessWidget {
         boxShadow: isActive
             ? [
                 BoxShadow(
-                  color: AppColors.lightPink.withOpacity(0.5),
+                  color: AppColors.lightPink.withValues(alpha: 0.5),
                   blurRadius: 25,
                   spreadRadius: 4,
                   offset: const Offset(

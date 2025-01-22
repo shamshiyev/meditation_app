@@ -53,8 +53,8 @@ class HomeScreen extends StatelessWidget {
                     style: AppTextStyles.s17w600.copyWith(
                       shadows: [
                         BoxShadow(
-                          color: AppColors.lightPurple.withOpacity(
-                            0.79,
+                          color: AppColors.lightPurple.withValues(
+                            alpha: 0.79,
                           ),
                           blurRadius: 22,
                           offset: const Offset(

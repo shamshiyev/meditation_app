@@ -32,8 +32,8 @@ class MainScreen extends StatelessWidget {
                   : null,
               border: Border.symmetric(
                 vertical: BorderSide(
-                  color: AppColors.white.withOpacity(
-                    0.6,
+                  color: AppColors.white.withValues(
+                    alpha: 0.6,
                   ), // Border color
                   width: 1.2, // Border width
                 ),
@@ -50,8 +50,8 @@ class MainScreen extends StatelessWidget {
                 gradient: AppColors.backGroundGradient,
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.purpleShadow.withOpacity(
-                      0.1,
+                    color: AppColors.purpleShadow.withValues(
+                      alpha: 0.1,
                     ), // Shadow color
                     spreadRadius: 0, // Spread radius
                     blurRadius: 30, // Blur radius

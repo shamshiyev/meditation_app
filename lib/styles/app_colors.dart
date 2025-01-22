@@ -21,8 +21,8 @@ class AppColors {
 
   static LinearGradient backGroundGradient = LinearGradient(
     colors: [
-      const Color(0xFFFFFFFF).withOpacity(0.4), // Start color
-      const Color(0xFFFFFFFF).withOpacity(0.07), // End color
+      const Color(0xFFFFFFFF).withValues(alpha: 0.4), // Start color
+      const Color(0xFFFFFFFF).withValues(alpha: 0.07), // End color
     ],
     stops: const [0.0, 1.0], // Positions of the colors
     begin: Alignment.topLeft,
@@ -32,8 +32,8 @@ class AppColors {
 
   static LinearGradient blackGradient = LinearGradient(
     colors: [
-      const Color(0xFF3C3B3B).withOpacity(0.4), // Start color
-      const Color(0xFF000000).withOpacity(0.7), // End color
+      const Color(0xFF3C3B3B).withValues(alpha: 0.4), // Start color
+      const Color(0xFF000000).withValues(alpha: 0.7), // End color
     ],
     stops: const [0.0, 1.0],
     begin: Alignment.topLeft,
